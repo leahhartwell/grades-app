@@ -1,31 +1,32 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
 
-const AssignmentNameTab = (props) => {
-    const [assignmentName, setAssignmentName] = useState();
-
-    const handleAddAssignmentName = () => {
-        console.log(assignmentName);
+const AssignmentWeightTab = (props) => {
+    const [assignmentWeight, setAssignmentWeight] = useState();
+    
+    const handleAddWeight = () => {
+        console.log(assignmentWeight);
     }
 
     return (
         <View style = {styles.item}>
             <Text style = {styles.itemText1}>{props.title}</Text>
             <TextInput 
+            keyboardType='numeric'
             style={styles.input}
             placeholder={props.input}
-            onChangeText={assignmentName=>setAssignmentName(assignmentName)}/>
+            OnChangeText={assignmentWeight=>setAssignmentWeight(assignmentWegiht)}/>
 
-        {/* Change this later - just for testing in terminal */}
-        <TouchableOpacity onPress={() => handleAddAssignmentName()}>
-          <View style={styles.addWrapper}>
-            <Text style={styles.addText}>+</Text>
-          </View>
-        </TouchableOpacity>
-
+            <TouchableOpacity onPress={() => handleAddWeight()}>
+                <View style={styles.addWrapper}>
+                    <Text style={styles.addText}>+</Text>
+                    </View>
+            </TouchableOpacity>
         </View>
     )
 }
+
+
 
 const styles = StyleSheet.create({
     item:{
@@ -50,4 +51,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default AssignmentNameTab
+export default AssignmentWeightTab
