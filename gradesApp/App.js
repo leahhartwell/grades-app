@@ -1,26 +1,43 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 import CourseTab from './components/CourseTab';
 import TaskTab from './components/TaskTab';
 import { NavigationContainer, StackRouter } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-function HomeScreen() {
+const CourseScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.mainWrapper}>
         <View style={styles.headerWrapper}> 
-          <Text style={styles.header}> Courses </Text>
         </View>
         <View style={styles.coursesWrapper}>
-          <CourseTab text={'MECH 328'}/>
-          <TaskTab/>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() =>
+              navigation.navigate('Specific Course')
+            }
+          >
+            <CourseTab text={'MECH 328'}/>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
   );
 }
 
+const SpecificScreen = ({ navigation, route }) => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.mainWrapper}>
+        <View style={styles.headerWrapper}> 
+        </View>
+        <View style={styles.coursesWrapper}>
+          <TaskTab/>
+        </View>
+      </View>
+    </View>
+  );
+};
 
 const Stack = createNativeStackNavigator();
 
@@ -28,7 +45,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Courses" component={CourseScreen} />
+        <Stack.Screen name="Specific Course" component={SpecificScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
