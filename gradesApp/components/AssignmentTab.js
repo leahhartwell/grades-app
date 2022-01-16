@@ -26,14 +26,7 @@ const styles = StyleSheet.create({
         paddingTop: 10,
         paddingHorizontal: 20
     },
-    // itemText2:{
-    //     fontSize: 24,
-    //     paddingBottom: 10,
-    //     paddingHorizontal: 20
-    // },
     input: {
-        backgroundColor: '#FFFFFF',
-        borderRadius: 5,
         fontSize: 18,
         paddingTop: 5,
         paddingBottom: 5,
