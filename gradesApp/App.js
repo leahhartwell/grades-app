@@ -97,6 +97,14 @@ const AssignmentScreen = ({ navigation, route }) => {
               <AssignmentWeightTab title={'Weight (%)'} input={'e.g. 40'}/>
               <AssignmentGradeTab title={'Grade (%)'} input={'e.g. 75'}/>
             </View>
+
+            <TouchableOpacity
+            
+            style={styles.addButtonItemLong}>
+            {/* onPress={() => handleAddAssignmentName()}> */}
+            <Text style = {styles.addButtonFontLong}> Add </Text>
+          
+          </TouchableOpacity>
           </ScrollView>
         </View>
       </KeyboardAvoidingView>
@@ -197,5 +205,18 @@ const styles = StyleSheet.create({
   },
   addButtonFont:{
     fontSize: 24,
+  },
+  addButtonItemLong:{
+    backgroundColor: '#C4C4C4',
+    borderRadius: 100,
+    height: 50,
+    paddingHorizontal: 10,
+    marginTop: 10,
+    alignItems: 'flex-start'
+  },
+  addButtonFontLong:{
+    alignSelf: 'center',
+    fontSize: 24,
+    padding: 10,
   }
 });
