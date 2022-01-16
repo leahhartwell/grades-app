@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 import CourseTab from './components/CourseTab';
 import TaskTab from './components/TaskTab';
+import AssignmentTab from './components/AssignmentTab';
 import { NavigationContainer, StackRouter } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -17,7 +18,7 @@ const CourseScreen = ({ navigation }) => {
               navigation.navigate('Specific Course')
             }
           >
-            <CourseTab text={'MECH 328'}/>
+            <CourseTab course={'MECH 328'} grade={'90%'}/>
           </TouchableOpacity>
         </View>
       </View>
@@ -32,7 +33,31 @@ const SpecificScreen = ({ navigation, route }) => {
         <View style={styles.headerWrapper}> 
         </View>
         <View style={styles.coursesWrapper}>
-          <TaskTab/>
+        <TouchableOpacity
+            style={styles.button}
+            onPress={() =>
+              navigation.navigate('Add Assignment') // change this route later
+            }
+          >
+            <TaskTab/>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
+  );
+};
+
+const AssignmentScreen = ({ navigation, route }) => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.mainWrapper}>
+        <View style={styles.headerWrapper}> 
+        </View>
+        <View style={styles.coursesWrapper}>
+          <AssignmentTab/>
+          <AssignmentTab/>
+          <AssignmentTab/>
+          <AssignmentTab/>
         </View>
       </View>
     </View>
@@ -47,6 +72,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Courses" component={CourseScreen} />
         <Stack.Screen name="Specific Course" component={SpecificScreen} />
+        <Stack.Screen name="Add Assignment" component={AssignmentScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

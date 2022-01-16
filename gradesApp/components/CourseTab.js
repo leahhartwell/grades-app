@@ -4,8 +4,8 @@ import { View, Text, StyleSheet} from 'react-native';
 const CourseTab = (props) => {
     return (
         <View style={styles.CourseTabWrapper}>
-            <Text style={styles.text}>{props.text}</Text>
-            <Text style={styles.text}>{props.text}</Text>
+            <Text style={styles.text}>{props.course}</Text>
+            <Text style={styles.text}>{props.grade}</Text>
         </View>
     )
 }
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#C4DADB',
         opacity: 0.9,
         padding: 20,
-        borderRadius: 15,
+        borderRadius: 10,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
