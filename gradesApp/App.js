@@ -72,10 +72,10 @@ const AssignmentScreen = ({ navigation, route }) => {
         <View style={styles.headerWrapper}> 
         </View>
         <View style={styles.coursesWrapper}>
-          <AssignmentTab/>
-          <AssignmentTab/>
-          <AssignmentTab/>
-          <AssignmentTab/>
+          <AssignmentTab title={'Name'} input={'e.g. Assignment 1'}/>
+          <AssignmentTab title={'Due Date'} input={'e.g. Dec 1, 2022'}/>
+          <AssignmentTab title={'Weight (%)'} input={'e.g. 40'}/>
+          <AssignmentTab title={'Grade (%)'} input={'e.g. 75'}/>
         </View>
       </View>
     </View>
