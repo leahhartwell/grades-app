@@ -23,12 +23,12 @@ const CourseScreen = ({ navigation }) => {
       <View style={styles.mainWrapper}>
         <View style={styles.headerWrapper}> 
           <TouchableOpacity
-            style={styles.button}
+            style={styles.addButtonItem}
             onPress={() =>
               navigation.navigate('Create Course')
             }
           >
-            <Text> + </Text>
+            <Text style = {styles.addButtonFont}> + </Text>
           </TouchableOpacity>
         </View>
         <View style={styles.coursesWrapper}>
@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
   },
   headerWrapper: {
     paddingBottom: 15,
-    paddingTop: 5,
+    paddingTop: 10,
   },
   header: {
     fontSize: 36,
@@ -171,4 +171,17 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: "flex-end",
   },
+  addButtonItem:{
+    backgroundColor: '#C4C4C4',
+    borderRadius: 100,
+    width: 40,
+    height: 40,
+    marginTop: 10,
+    alignItems: 'flex-start'
+  },
+  addButtonFont:{
+    justifyContent: 'center',
+    fontSize: 30,
+    paddingLeft:6,
+  }
 });
