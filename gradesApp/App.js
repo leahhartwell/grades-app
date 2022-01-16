@@ -100,14 +100,31 @@ const SpecificScreen = ({ navigation, route }) => {
   return (
     <View style={styles.container}>
       <View style={styles.mainWrapper}>
-        <View style={styles.headerWrapper}> 
+      <View style={{
+          paddingBottom: 15,
+          paddingTop: 10,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}> 
         <TouchableOpacity
             style={styles.addButtonItem}
-            onPress={() =>
-              navigation.navigate('Add Assignment')
-            }
+            // onPress={() =>
+            //   navigation.navigate('Add Assignment')
+            // }
           >
             <Text style = {styles.addButtonFont}> + </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{    
+              backgroundColor: '#C4C4C4',
+              borderRadius: 100,
+              width: 100,
+              height: 45,
+              justifyContent: 'center',
+              alignItems: 'center',}}
+          >
+            <Text style = {styles.addButtonFont}> Sort </Text>
           </TouchableOpacity>
         </View>
         <ScrollView>
