@@ -5,12 +5,10 @@ const AssignmentTab = (props) => {
 
     return (
         <View style = {styles.item}>
-            <View style = {styles.itemLeft}> 
-                <Text style = {styles.itemText1}>{props.title}</Text>
-                <TextInput 
-                style={styles.input}
-                placeholder={props.input}/>
-            </View>
+            <Text style = {styles.itemText1}>{props.title}</Text>
+            <TextInput 
+            style={styles.input}
+            placeholder={props.input}/>
         </View>
     )
 }
@@ -20,12 +18,12 @@ const styles = StyleSheet.create({
         backgroundColor: '#AFCBEC',
         borderRadius: 10,
         width: "100%",
-        height: 75,
         marginBottom: 20
     },
     itemText1:{
         fontSize: 16,
-        paddingTop: 8,
+        fontWeight: "bold",
+        paddingTop: 10,
         paddingHorizontal: 20
     },
     // itemText2:{
