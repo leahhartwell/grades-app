@@ -63,10 +63,7 @@ const SpecificScreen = ({ navigation, route }) => {
     <View style={styles.container}>
       <View style={styles.mainWrapper}>
         <View style={styles.headerWrapper}> 
-        </View>
-        <ScrollView>
-          <View style={styles.coursesWrapper}>
-          <TouchableOpacity
+        <TouchableOpacity
             style={styles.addButtonItem}
             onPress={() =>
               navigation.navigate('Add Assignment')
@@ -74,7 +71,9 @@ const SpecificScreen = ({ navigation, route }) => {
           >
             <Text style = {styles.addButtonFont}> + </Text>
           </TouchableOpacity>
-
+        </View>
+        <ScrollView>
+          <View style={styles.coursesWrapper}>
           <TaskTab/>
           </View>
         </ScrollView>
