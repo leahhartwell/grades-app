@@ -67,13 +67,15 @@ const SpecificScreen = ({ navigation, route }) => {
         <ScrollView>
           <View style={styles.coursesWrapper}>
           <TouchableOpacity
-              style={styles.button}
-              onPress={() =>
-                navigation.navigate('Add Assignment') // change this route later
-              }
-            >
-              <TaskTab/>
-            </TouchableOpacity>
+            style={styles.addButtonItem}
+            onPress={() =>
+              navigation.navigate('Add Assignment')
+            }
+          >
+            <Text style = {styles.addButtonFont}> + </Text>
+          </TouchableOpacity>
+
+          <TaskTab/>
           </View>
         </ScrollView>
       </View>

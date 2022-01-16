@@ -31,7 +31,8 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         width: "100%",
         height: 75,
-        marginBottom: 15
+        marginBottom: 15,
+        marginTop: 15
     },
     itemTop:{
         flexDirection: 'row',

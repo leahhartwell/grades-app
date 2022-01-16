@@ -19,14 +19,15 @@ const AssignmentGradeTab = (props) => {
                 placeholder={props.input}
                 minValue={0}
                 maxValue={100}
+                rounded={true}
                 onChange={assignmentGrade=>setAssignmentGrade(assignmentGrade)}/>
 
-
+{/* 
             <TouchableOpacity onPress={() => handleAddGrade()}>
                 <View style={styles.addWrapper}>
                     <Text style={styles.addText}>+</Text>
                     </View>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
         </View>
     )
 }

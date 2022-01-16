@@ -16,12 +16,12 @@ const AssignmentDueDateTab = (props) => {
             placeholder={props.input}
             onChangeText={assignmentDueDate=>setAssignmentDueDate(assignmentDueDate)}/>
 
-            {/* Change this later - just for testing in terminal */}
+            {/* Change this later - just for testing in terminal
             <TouchableOpacity onPress={() => handleAddAssignmentDueDate()}>
             <View style={styles.addWrapper}>
             <Text style={styles.addText}>+</Text>
             </View>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
         </View>
     )

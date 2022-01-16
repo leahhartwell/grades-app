@@ -17,11 +17,11 @@ const AssignmentNameTab = (props) => {
             onChangeText={assignmentName=>setAssignmentName(assignmentName)}/>
 
         {/* Change this later - just for testing in terminal */}
-        <TouchableOpacity onPress={() => handleAddAssignmentName()}>
+        {/* <TouchableOpacity onPress={() => handleAddAssignmentName()}>
           <View style={styles.addWrapper}>
             <Text style={styles.addText}>+</Text>
           </View>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
         </View>
     )

@@ -24,14 +24,15 @@ const AssignmentWeightTab = (props) => {
                 placeholder={props.input}
                 minValue={0}
                 maxValue={100}
+                rounded={true}
                 onChange={assignmentWeight=>setAssignmentWeight(assignmentWeight)}/>
 
 
-            <TouchableOpacity onPress={() => handleAddWeight()}>
+            {/* <TouchableOpacity onPress={() => handleAddWeight()}>
                 <View style={styles.addWrapper}>
                     <Text style={styles.addText}>+</Text>
                     </View>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
         </View>
     )
 }
