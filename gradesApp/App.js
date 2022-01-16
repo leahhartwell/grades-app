@@ -8,6 +8,7 @@ import AssignmentGradeTab from './components/AssignmentGradeTab';
 import { NavigationContainer, StackRouter } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ColourBlock from './components/colourBlock';
+import {useState} from 'react';
 
 const CourseName = (props) => {
   return (
@@ -19,6 +20,14 @@ const CourseName = (props) => {
 };
 
 const CourseScreen = ({ navigation }) => {
+  const [course, setCourse] = useState();
+  const [courseItems, setCourseItems]  = useState([]);
+
+  const handleCourse = () => {
+    setCourseItems([...courseItems, course]);
+    setCourse(null);
+    console.log(courseItems)
+  };
   return (
     <View style={styles.container}>
       <View style={styles.mainWrapper}>
@@ -175,14 +184,12 @@ const styles = StyleSheet.create({
   addButtonItem:{
     backgroundColor: '#C4C4C4',
     borderRadius: 100,
-    width: 40,
-    height: 40,
-    marginTop: 10,
-    alignItems: 'flex-start'
+    width: 45,
+    height: 45,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   addButtonFont:{
-    justifyContent: 'center',
-    fontSize: 30,
-    paddingLeft:6,
+    fontSize: 24,
   }
 });
