@@ -32,7 +32,13 @@ const CourseScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.mainWrapper}>
-        <View style={styles.headerWrapper}> 
+      <View style={{
+          paddingBottom: 15,
+          paddingTop: 10,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}>  
           <TouchableOpacity
             style={styles.addButtonItem}
             onPress={() =>
@@ -41,16 +47,47 @@ const CourseScreen = ({ navigation }) => {
           >
             <Text style = {styles.addButtonFont}> + </Text>
           </TouchableOpacity>
+          <TouchableOpacity
+            style={{    
+              backgroundColor: '#C4C4C4',
+              borderRadius: 100,
+              width: 100,
+              height: 45,
+              justifyContent: 'center',
+              alignItems: 'center',}}
+          >
+            <Text style = {styles.addButtonFont}> Sort </Text>
+          </TouchableOpacity>
         </View>
         <ScrollView>
           <View style={styles.coursesWrapper}>
             <TouchableOpacity
               style={styles.button}
               onPress={() =>
-                navigation.navigate('Specific Course')
+                navigation.navigate('MECH 328')
               }
             >
-              <CourseTab course={'MECH 328'} grade={'90%'} colour={'#AFCBEC'}/>
+              <CourseTab course={'MECH 328'} grade={'75%'} colour={'#AFCBEC'}/>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.button}
+            >
+              <CourseTab course={'MECH 463'} grade={'81%'} colour={'#C4DADB'}/>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.button}
+            >
+              <CourseTab course={'MECH 368'} grade={'82%'} colour={'#CCDAC8'}/>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.button}
+            >
+              <CourseTab course={'MECH 325'} grade={'85%'} colour={'#9CD0FF'}/>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.button}
+            >
+              <CourseTab course={'MECH 360'} grade={'90%'} colour={'#EDCBB3'}/>
             </TouchableOpacity>
           </View>
         </ScrollView>
@@ -152,7 +189,7 @@ const CreateCourseScreen = ({ navigation, route }) => {
             paddingBottom: 25,
             paddingTop: 25,
           }}> 
-          <CourseName course={'MECH 463'}/>
+          <CourseName />
         </View>
         <Text style={{
               fontSize: 16,
@@ -165,6 +202,10 @@ const CreateCourseScreen = ({ navigation, route }) => {
           <ColourBlock colour={'#C4DADB'}/>
           <ColourBlock colour={'#EDCBB3'}/>
         </View>
+        <TouchableOpacity
+          style={styles.addButtonItemLong}>
+          <Text style = {styles.addButtonFontLong}> Add </Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -177,7 +218,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Courses" component={CourseScreen} />
-        <Stack.Screen name="Specific Course" component={SpecificScreen} />
+        <Stack.Screen name="MECH 328" component={SpecificScreen} />
         <Stack.Screen name="Add Assignment" component={AssignmentScreen} />
         <Stack.Screen name="Create Course" component={CreateCourseScreen} />
       </Stack.Navigator>
