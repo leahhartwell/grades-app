@@ -4,6 +4,7 @@ import TaskTab from './components/TaskTab';
 import AssignmentTab from './components/AssignmentTab';
 import { NavigationContainer, StackRouter } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import ColourBlock from './components/colourBlock';
 
 const CourseName = (props) => {
   return (
@@ -35,7 +36,7 @@ const CourseScreen = ({ navigation }) => {
               navigation.navigate('Specific Course')
             }
           >
-            <CourseTab course={'MECH 328'} grade={'90%'}/>
+            <CourseTab course={'MECH 328'} grade={'90%'} colour={'#AFCBEC'}/>
           </TouchableOpacity>
         </View>
       </View>
@@ -86,9 +87,14 @@ const CreateCourseScreen = ({ navigation, route }) => {
     <View style={styles.container}>
       <View style={styles.mainWrapper}>
         <View style={styles.headerWrapper}> 
-        </View>
-        <View style={styles.coursesWrapper}>
           <CourseName course={'MECH 463'}/>
+        </View>
+        <View style={styles.colourWrapper}>
+          <ColourBlock colour={'#AFCBEC'}/>
+          <ColourBlock colour={'#CCDAC8'}/>
+          <ColourBlock colour={'#9CD0FF'}/>
+          <ColourBlock colour={'#C4DADB'}/>
+          <ColourBlock colour={'#EDCBB3'}/>
         </View>
       </View>
     </View>
@@ -142,4 +148,13 @@ const styles = StyleSheet.create({
       paddingBottom: 15,
       paddingHorizontal: 15
   },
+  colourWrapper: {
+    opacity: 0.9,
+    padding: 15,
+    borderRadius: 20,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 15,
+},
 });
