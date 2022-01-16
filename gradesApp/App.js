@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, KeyboardAvoidingView, ScrollView } from 'react-native';
 import CourseTab from './components/CourseTab';
 import TaskTab from './components/TaskTab';
 import AssignmentDueDateTab from './components/AssignmentDueDateTab';
@@ -41,16 +41,18 @@ const CourseScreen = ({ navigation }) => {
             <Text style = {styles.addButtonFont}> + </Text>
           </TouchableOpacity>
         </View>
-        <View style={styles.coursesWrapper}>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() =>
-              navigation.navigate('Specific Course')
-            }
-          >
-            <CourseTab course={'MECH 328'} grade={'90%'} colour={'#AFCBEC'}/>
-          </TouchableOpacity>
-        </View>
+        <ScrollView>
+          <View style={styles.coursesWrapper}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() =>
+                navigation.navigate('Specific Course')
+              }
+            >
+              <CourseTab course={'MECH 328'} grade={'90%'} colour={'#AFCBEC'}/>
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
       </View>
     </View>
   );
@@ -62,16 +64,18 @@ const SpecificScreen = ({ navigation, route }) => {
       <View style={styles.mainWrapper}>
         <View style={styles.headerWrapper}> 
         </View>
-        <View style={styles.coursesWrapper}>
-        <TouchableOpacity
-            style={styles.button}
-            onPress={() =>
-              navigation.navigate('Add Assignment') // change this route later
-            }
-          >
-            <TaskTab/>
-          </TouchableOpacity>
-        </View>
+        <ScrollView>
+          <View style={styles.coursesWrapper}>
+          <TouchableOpacity
+              style={styles.button}
+              onPress={() =>
+                navigation.navigate('Add Assignment') // change this route later
+              }
+            >
+              <TaskTab/>
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
       </View>
     </View>
   );
@@ -86,12 +90,14 @@ const AssignmentScreen = ({ navigation, route }) => {
         keyboardVerticalOffset={100}
       >
         <View style={styles.mainWrapper}>
-          <View style={styles.coursesWrapper}>
-            <AssignmentNameTab title={'Name'} input={'e.g. Assignment 1'}/>
-            <AssignmentDueDateTab title={'Due Date'} input={'e.g. Dec 1, 2022'}/>
-            <AssignmentWeightTab title={'Weight (%)'} input={'e.g. 40'}/>
-            <AssignmentGradeTab title={'Grade (%)'} input={'e.g. 75'}/>
-          </View>
+          <ScrollView>
+            <View style={styles.coursesWrapper}>
+              <AssignmentNameTab title={'Name'} input={'e.g. Assignment 1'}/>
+              <AssignmentDueDateTab title={'Due Date'} input={'e.g. Dec 1, 2022'}/>
+              <AssignmentWeightTab title={'Weight (%)'} input={'e.g. 40'}/>
+              <AssignmentGradeTab title={'Grade (%)'} input={'e.g. 75'}/>
+            </View>
+          </ScrollView>
         </View>
       </KeyboardAvoidingView>
       

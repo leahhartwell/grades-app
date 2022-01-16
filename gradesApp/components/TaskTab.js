@@ -30,7 +30,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#EDCBB3',
         borderRadius: 10,
         width: "100%",
-        height: 75
+        height: 75,
+        marginBottom: 15
     },
     itemTop:{
         flexDirection: 'row',
