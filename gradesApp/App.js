@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
 import CourseTab from './components/CourseTab';
 import TaskTab from './components/TaskTab';
 import AssignmentTab from './components/AssignmentTab';
@@ -10,7 +10,7 @@ const CourseName = (props) => {
   return (
       <View style={styles.CourseNameWrapper}>
           <Text style={styles.text}>Name</Text>
-          <Text style={styles.textUser}>{props.course}</Text>
+          <TextInput style={styles.textUser} placeholder={'Add a course...'} />
       </View>
   )
 };
@@ -68,16 +68,21 @@ const SpecificScreen = ({ navigation, route }) => {
 const AssignmentScreen = ({ navigation, route }) => {
   return (
     <View style={styles.container}>
-      <View style={styles.mainWrapper}>
-        <View style={styles.headerWrapper}> 
+      <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        style={styles.keyboardAvoidView}
+        keyboardVerticalOffset={100}
+      >
+        <View style={styles.mainWrapper}>
+          <View style={styles.coursesWrapper}>
+            <AssignmentTab title={'Name'} input={'e.g. Assignment 1'}/>
+            <AssignmentTab title={'Due Date'} input={'e.g. Dec 1, 2022'}/>
+            <AssignmentTab title={'Weight (%)'} input={'e.g. 40'}/>
+            <AssignmentTab title={'Grade (%)'} input={'e.g. 75'}/>
+          </View>
         </View>
-        <View style={styles.coursesWrapper}>
-          <AssignmentTab title={'Name'} input={'e.g. Assignment 1'}/>
-          <AssignmentTab title={'Due Date'} input={'e.g. Dec 1, 2022'}/>
-          <AssignmentTab title={'Weight (%)'} input={'e.g. 40'}/>
-          <AssignmentTab title={'Grade (%)'} input={'e.g. 75'}/>
-        </View>
-      </View>
+      </KeyboardAvoidingView>
+      
     </View>
   );
 };
@@ -86,9 +91,16 @@ const CreateCourseScreen = ({ navigation, route }) => {
   return (
     <View style={styles.container}>
       <View style={styles.mainWrapper}>
-        <View style={styles.headerWrapper}> 
+        <View style={{
+            paddingBottom: 25,
+            paddingTop: 25,
+          }}> 
           <CourseName course={'MECH 463'}/>
         </View>
+        <Text style={{
+              fontSize: 16,
+              paddingHorizontal: 15,
+          }}>Colour</Text>
         <View style={styles.colourWrapper}>
           <ColourBlock colour={'#AFCBEC'}/>
           <ColourBlock colour={'#CCDAC8'}/>
@@ -123,11 +135,12 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   mainWrapper: {
-    paddingTop: 60,
     paddingHorizontal: 20,
+    paddingVertical: 5,
   },
   headerWrapper: {
-    paddingTop: 10,
+    paddingBottom: 15,
+    paddingTop: 5,
   },
   header: {
     fontSize: 36,
@@ -136,25 +149,24 @@ const styles = StyleSheet.create({
     backgroundColor: '#E0E0E0',
     borderRadius: 10,
     width: "100%",
-    height: 85
+    padding: 15,
   },
   text:{
       fontSize: 16,
-      paddingTop: 15,
-      paddingHorizontal: 15,
   },
   textUser:{
       fontSize: 24,
-      paddingBottom: 15,
-      paddingHorizontal: 15
   },
   colourWrapper: {
-    opacity: 0.9,
     padding: 15,
-    borderRadius: 20,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     marginBottom: 15,
-},
+  },  
+  keyboardAvoidView: {
+    position: 'absolute',
+    width: '100%',
+    justifyContent: "flex-end",
+  },
 });
