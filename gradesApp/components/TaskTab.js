@@ -21,14 +21,12 @@ const styles = StyleSheet.create({
         height: 75
     },
     itemText1:{
-        fontFamily: "Roboto",
         fontSize: 24,
         fontWeight: "bold",
         paddingTop: 8,
         paddingHorizontal: 20
     },
     itemText2:{
-        fontFamily: "Roboto",
         fontSize: 18,
         fontWeight: "bold",
         paddingBottom: 10,
