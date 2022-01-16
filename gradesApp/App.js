@@ -4,6 +4,7 @@ import TaskTab from './components/TaskTab';
 import AssignmentTab from './components/AssignmentTab';
 import AssignmentNameTab from './components/AssignmentNameTab';
 import AssignmentWeightTab from './components/AssignmentWeightTab';
+import AssignmentGradeTab from './components/AssignmentGradeTab';
 import { NavigationContainer, StackRouter } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ColourBlock from './components/colourBlock';
@@ -80,7 +81,7 @@ const AssignmentScreen = ({ navigation, route }) => {
             <AssignmentNameTab title={'Name'} input={'e.g. Assignment 1'}/>
             <AssignmentTab title={'Due Date'} input={'e.g. Dec 1, 2022'}/>
             <AssignmentWeightTab title={'Weight (%)'} input={'e.g. 40'}/>
-            <AssignmentTab title={'Grade (%)'} input={'e.g. 75'}/>
+            <AssignmentGradeTab title={'Grade (%)'} input={'e.g. 75'}/>
           </View>
         </View>
       </KeyboardAvoidingView>
