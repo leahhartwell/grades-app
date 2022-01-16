@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, KeyboardAvoidingView, ScrollView } from 'react-native';
 import CourseTab from './components/CourseTab';
 import TaskTab from './components/TaskTab';
+import TaskTabExample from './components/TaskTabExample';
 import AssignmentDueDateTab from './components/AssignmentDueDateTab';
 import AssignmentNameTab from './components/AssignmentNameTab';
 import AssignmentWeightTab from './components/AssignmentWeightTab';
@@ -74,7 +75,36 @@ const SpecificScreen = ({ navigation, route }) => {
         </View>
         <ScrollView>
           <View style={styles.coursesWrapper}>
-          <TaskTab/>
+          <TaskTab 
+            placeholderName={'Add an assignment...'} 
+            placeholderWeight={'WT (%)'}
+            placeholderDate={'Add a due date...'}
+            placeholderGrade={'GR (%)'}/>
+          <TaskTabExample
+            assignment={'Assignment 1'}
+            weight={'5%'}
+            date={'Jan 22'}
+            grade={'77%'}/>
+          <TaskTabExample
+            assignment={'Midterm 1 Exam'}
+            weight={'20%'}
+            date={'Feb 2'}
+            grade={'80%'}/>
+          <TaskTabExample
+            assignment={'Assignment 2'}
+            weight={'5%'}
+            date={'Feb 13'}
+            grade={'90%'}/>
+          <TaskTabExample
+            assignment={'Capstone Lab'}
+            weight={'15%'}
+            date={'Feb 20'}
+            grade={'75%'}/>
+          <TaskTabExample
+            assignment={'Midterm 2 Exam'}
+            weight={'20%'}
+            date={'Mar 7'}
+            grade={'65%'}/>
           </View>
         </ScrollView>
       </View>

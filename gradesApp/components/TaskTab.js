@@ -1,25 +1,46 @@
-import React from 'react';
-import { View, Text, StyleSheet} from 'react-native';
+import React, {useState} from 'react';
+import { View, Text, StyleSheet, TextInput} from 'react-native';
+import NumericInput from 'react-native-numeric-input'
 
-const TaskTab = () => {
+const TaskTab = (props) => {
+    const [assignmentName, setAssignmentName] = useState();
+    const [assignmentWeight, setAssignmentWeight] = useState();
+    const [assignmentDueDate, setAssignmentDueDate] = useState();
+    const [assignmentGrade, setAssignmentGrade] = useState();
 
     return (
         <View style = {styles.item}>
             <View style = {styles.itemTop}> 
-                <Text style = {styles.itemText1}>Assignment 1</Text>
-                <Text style = {styles.itemText3}>
-                    5%
-                        <Text>{" "}</Text>
+                <TextInput 
+                    style={styles.itemText1}
+                    placeholder={props.placeholderName}
+                    onChangeText={assignmentName=>setAssignmentName(assignmentName)}
+                />
+                <TextInput 
+                    style={styles.itemText3}
+                    placeholder={props.placeholderWeight}
+                    onChange={assignmentWeight=>setAssignmentWeight(assignmentWeight)}
+                    />
+                    {/* <Text style = {styles.itemText3}>
+                    <Text>{" "}</Text>
                     <Text style = {styles.innerText}>WT</Text>
-                </Text>
+                    </Text> */}
             </View>
             <View style = {styles.itemBottom}> 
-                <Text style = {styles.itemText2}>Due: Jan 31</Text>
-                <Text style = {styles.itemText4}>
-                    75%  
+                <TextInput 
+                    style={styles.itemText2}
+                    placeholder={props.placeholderDate}
+                    onChangeText={assignmentDueDate=>setAssignmentDueDate(assignmentDueDate)}
+                />
+                <TextInput 
+                    style={styles.itemText4}
+                    placeholder={props.placeholderGrade}
+                    onChange={assignmentGrade=>setAssignmentGrade(assignmentGrade)}
+                    />
+                    {/* <Text style = {styles.itemText4}>
                         <Text>{"  "}</Text>
-                    <Text style = {styles.innerText}>GR</Text>
-                </Text>
+                        <Text style = {styles.innerText}>GR</Text>
+                    </Text> */}
             </View>
         </View>
     )
@@ -52,7 +73,7 @@ const styles = StyleSheet.create({
         paddingLeft: 20
     },
     itemText3:{
-        fontSize: 24,
+        fontSize: 18,
         fontWeight: "bold",
         paddingTop: 8,
         paddingRight: 20,
