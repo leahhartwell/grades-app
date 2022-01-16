@@ -93,8 +93,8 @@ const AssignmentScreen = ({ navigation, route }) => {
         <View style={styles.mainWrapper}>
           <ScrollView>
             <View style={styles.coursesWrapper}>
-              <AssignmentNameTab title={'Name'} input={'e.g. Assignment 1'}/>
-              <AssignmentDueDateTab title={'Due Date'} input={'e.g. Dec 1, 2022'}/>
+              <AssignmentNameTab title={'Name'} input={'Add an assignment...'}/>
+              <AssignmentDueDateTab title={'Due Date'} input={'Add a due date...'}/>
               <AssignmentWeightTab title={'Weight (%)'} input={'e.g. 40'}/>
               <AssignmentGradeTab title={'Grade (%)'} input={'e.g. 75'}/>
             </View>

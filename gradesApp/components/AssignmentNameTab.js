@@ -36,17 +36,16 @@ const styles = StyleSheet.create({
     },
     itemText1:{
         fontSize: 16,
-        fontWeight: "bold",
         paddingTop: 10,
         paddingHorizontal: 20
     },
     input: {
-        fontSize: 18,
+        fontSize: 20,
         paddingTop: 5,
         paddingBottom: 5,
         paddingHorizontal: 10,
         margin: 10,
-        width: 200
+        width: "100%"
     }
 });
 
