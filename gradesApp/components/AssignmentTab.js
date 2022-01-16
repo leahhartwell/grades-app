@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TextInput} from 'react-native';
 
 const AssignmentTab = (props) => {
 
@@ -7,7 +7,9 @@ const AssignmentTab = (props) => {
         <View style = {styles.item}>
             <View style = {styles.itemLeft}> 
                 <Text style = {styles.itemText1}>{props.title}</Text>
-                <Text style = {styles.itemText2}>{props.input}</Text>
+                <TextInput 
+                style={styles.input}
+                placeholder={props.input}/>
             </View>
         </View>
     )
@@ -26,11 +28,21 @@ const styles = StyleSheet.create({
         paddingTop: 8,
         paddingHorizontal: 20
     },
-    itemText2:{
-        fontSize: 24,
-        paddingBottom: 10,
-        paddingHorizontal: 20
-    },
+    // itemText2:{
+    //     fontSize: 24,
+    //     paddingBottom: 10,
+    //     paddingHorizontal: 20
+    // },
+    input: {
+        backgroundColor: '#FFFFFF',
+        borderRadius: 5,
+        fontSize: 18,
+        paddingTop: 5,
+        paddingBottom: 5,
+        paddingHorizontal: 10,
+        margin: 10,
+        width: 200
+    }
 });
 
 export default AssignmentTab
