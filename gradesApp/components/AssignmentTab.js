@@ -1,13 +1,13 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-const AssignmentTab = () => {
+const AssignmentTab = (props) => {
 
     return (
         <View style = {styles.item}>
             <View style = {styles.itemLeft}> 
-                <Text style = {styles.itemText1}>Name</Text>
-                <Text style = {styles.itemText2}>Capstone Lab</Text>
+                <Text style = {styles.itemText1}>{props.title}</Text>
+                <Text style = {styles.itemText2}>{props.input}</Text>
             </View>
         </View>
     )
