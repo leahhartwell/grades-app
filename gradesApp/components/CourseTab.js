@@ -4,41 +4,26 @@ import { View, Text, StyleSheet} from 'react-native';
 const CourseTab = (props) => {
     return (
         <View style={styles.CourseTabWrapper}>
-            <View style={styles.left}>
-                <View style={styles.indicator}></View>
-                <Text style={styles.text}>{props.text}</Text>
-            </View>
+            <Text style={styles.text}>{props.text}</Text>
+            <Text style={styles.text}>{props.text}</Text>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    CourseWrapper: {
-        backgroundColor: 'black',
+    CourseTabWrapper: {
+        backgroundColor: '#C4DADB',
         opacity: 0.9,
-        padding: 15,
-        borderRadius: 20,
+        padding: 20,
+        borderRadius: 15,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
         marginBottom: 15,
     },
-    left: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        flexWrap: 'wrap'
-    },
-    indicator: {
-        width: 20,
-        height: 20,
-        backgroundColor: 'white',
-        opacity: 0.5,
-        borderRadius: 5,
-        marginRight: 15,
-    },
     text: {
         maxWidth: '90%',
-        fontSize: 16,
+        fontSize: 20,
     },
 });
 
