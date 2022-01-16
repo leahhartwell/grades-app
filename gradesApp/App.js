@@ -18,7 +18,7 @@ const CourseScreen = ({ navigation }) => {
               navigation.navigate('Specific Course')
             }
           >
-            <CourseTab text={'MECH 328'}/>
+            <CourseTab course={'MECH 328'} grade={'90%'}/>
           </TouchableOpacity>
         </View>
       </View>
