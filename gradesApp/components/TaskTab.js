@@ -6,10 +6,8 @@ const TaskTab = () => {
     return (
         <View style = {styles.item}>
             <View style = {styles.itemLeft}> 
-                <Text sytle = {styles.itemText}>BEEEEEEEEEEEN</Text>
-            </View>
-            <View style = {styles.itemRight}>
-                <Text sytle = {styles.itemText}>OY!</Text>
+                <Text style = {styles.itemText1}>Assignment 1</Text>
+                <Text style = {styles.itemText2}>Due: Jan 31</Text>
             </View>
         </View>
     )
@@ -22,9 +20,20 @@ const styles = StyleSheet.create({
         width: "100%",
         height: 75
     },
-    itemLeft:{},
-    itemText:{},
-    itemRight:{},
+    itemText1:{
+        fontFamily: "Roboto",
+        fontSize: 24,
+        fontWeight: "bold",
+        paddingTop: 8,
+        paddingHorizontal: 20
+    },
+    itemText2:{
+        fontFamily: "Roboto",
+        fontSize: 18,
+        fontWeight: "bold",
+        paddingBottom: 10,
+        paddingHorizontal: 20
+    },
 });
 
 export default TaskTab
