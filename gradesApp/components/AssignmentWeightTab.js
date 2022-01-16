@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
+import NumericInput from 'react-native-numeric-input'
 
 const AssignmentWeightTab = (props) => {
     const [assignmentWeight, setAssignmentWeight] = useState();
@@ -11,11 +12,19 @@ const AssignmentWeightTab = (props) => {
     return (
         <View style = {styles.item}>
             <Text style = {styles.itemText1}>{props.title}</Text>
-            <TextInput 
+            {/* <TextInput 
             keyboardType='numeric'
             style={styles.input}
             placeholder={props.input}
-            OnChangeText={assignmentWeight=>setAssignmentWeight(assignmentWegiht)}/>
+            OnChangeText={assignmentWeight=>setAssignmentWeight(assignmentWegiht)}/> */}
+
+            <NumericInput
+                keyboardType='numeric'
+                style={styles.input}
+                placeholder={props.input}
+                minValue={0}
+                onChange={assignmentWeight=>setAssignmentWeight(assignmentWeight)}/>
+
 
             <TouchableOpacity onPress={() => handleAddWeight()}>
                 <View style={styles.addWrapper}>
@@ -25,8 +34,6 @@ const AssignmentWeightTab = (props) => {
         </View>
     )
 }
-
-
 
 const styles = StyleSheet.create({
     item:{
