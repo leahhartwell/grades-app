@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import CourseTab from './components/CourseTab';
+import TaskTab from './components/TaskTab';
 import { NavigationContainer, StackRouter } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -13,6 +14,7 @@ function HomeScreen() {
         </View>
         <View style={styles.coursesWrapper}>
           <CourseTab text={'MECH 328'}/>
+          <TaskTab/>
         </View>
       </View>
     </View>
